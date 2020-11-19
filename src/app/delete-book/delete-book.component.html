@@ -1,0 +1,32 @@
+<div>
+    <h3 class="mb-3 text-center">Book Details</h3>
+
+    <div class="col-md-12">
+        <table class="table table-bordered">
+            <thead>
+                <tr>
+                    <th scope="col">ConFirm</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Author</th>
+                    <th scope="col">Description</th>
+                    <th scope="col">Delete</th>
+                    <th scope="col">Cancel</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td>Are You Sure, you want to delete this</td>
+                    <td>{{Book.title}}</td>
+                    <td>{{Book.author}}</td>
+                    <td>{{Book.description}}</td>
+                    <td>
+                        <button class="delete" (click)="deteleBook()">Delete</button>
+                    </td>
+                    <td>
+                        <button class="delete" [routerLink]="['/']">Back</button>
+                    </td>
+                </tr>
+            </tbody>
+        </table>
+    </div>
+</div>

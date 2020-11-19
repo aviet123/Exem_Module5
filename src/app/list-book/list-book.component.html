@@ -1,0 +1,42 @@
+<div class="container custom-container-2">
+
+
+    <div class="no-data text-center">
+        <a class="btn btn-outline-primary" [routerLink]="['/create-book']">Add Book</a>
+    </div>
+
+    <div>
+        <h3 class="mb-3 text-center">Books List</h3>
+        <h3>There are {{Books.length}} books in the Book list</h3>
+        <div class="col-md-12">
+            <table class="table table-bordered">
+                <thead>
+                    <tr>
+                        <th scope="col">Id</th>
+                        <th scope="col">Title</th>
+                        <th scope="col">Author</th>
+                        <th scope="col">Edit</th>
+                        <th scope="col">Delete</th>
+                        <th scope="col">Details</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr *ngFor="let book of Books, index as i">
+                        <td>{{i+1}}</td>
+                        <td>{{book.title}}</td>
+                        <td>{{book.author}}</td>
+                        <td>
+                            <button class="btn btn-dark" [routerLink]="['/edit-book',book.id]">Edit</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-danger" [routerLink]="['/delete-book',book.id]">Delete</button>
+                        </td>
+                        <td>
+                            <button class="btn btn-light" [routerLink]="['/details-book',book.id]">Details</button>
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </div>
+</div>
